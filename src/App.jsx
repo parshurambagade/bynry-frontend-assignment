@@ -1,11 +1,15 @@
 
+import Header from "./components/ui/Header"
+import Home from "./pages/Home"
+
 
 function App() {
 
 
   return (
     <>
-      <h1 className="text-3xl">Hello</h1>
+      <Header />
+      <Home />
     </>
   )
 }

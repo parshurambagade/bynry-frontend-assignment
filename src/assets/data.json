@@ -1,0 +1,205 @@
+{
+    "data": [
+        {
+          "id": "1",
+          "name": "John Doe",
+          "profileImage": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Software Engineer",
+          "location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+          },
+          "briefBio": "Passionate software engineer with 5 years of experience in developing web applications.",
+          "contactInfo": {
+            "email": "john.doe@example.com",
+            "phone": "+1 123-456-7890"
+          },
+          "additionalInfo": {
+            "skills": ["JavaScript", "React", "Node.js"],
+            "languages": ["English", "Spanish"],
+            "hobbies": ["Reading", "Traveling"]
+          }
+        },
+        {
+          "id": "2",
+          "name": "Jane Smith",
+          "profileImage": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Student",
+          "location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+          },
+          "briefBio": "Computer science student with a passion for learning new technologies.",
+          "contactInfo": {
+            "email": "jane.smith@example.com",
+            "phone": "+1 987-654-3210"
+          },
+          "additionalInfo": {
+            "major": "Computer Science",
+            "graduationYear": 2025,
+            "clubs": ["Programming Club", "Chess Club"]
+          }
+        },
+        {
+          "id": "3",
+          "name": "Emily Brown",
+          "profileImage": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Teacher",
+          "location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+          },
+          "briefBio": "Experienced teacher specializing in mathematics and computer science.",
+          "contactInfo": {
+            "email": "emily.brown@example.com",
+            "phone": "+44 20 7123 4567"
+          },
+          "additionalInfo": {
+            "subjects": ["Mathematics", "Computer Science"],
+            "yearsOfExperience": 10,
+            "certifications": ["M.Ed", "Cisco Certified"]
+          }
+        },
+        {
+          "id": "4",
+          "name": "Michael Johnson",
+          "profileImage": "https://images.pexels.com/photos/1374510/pexels-photo-1374510.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Doctor",
+          "location": {
+            "latitude": 35.6895,
+            "longitude": 139.6917
+          },
+          "briefBio": "Dedicated physician with a focus on internal medicine.",
+          "contactInfo": {
+            "email": "michael.johnson@example.com",
+            "phone": "+81 3-1234-5678"
+          },
+          "additionalInfo": {
+            "specialization": "Internal Medicine",
+            "hospital": "Tokyo Medical Center",
+            "languagesSpoken": ["English", "Japanese"]
+          }
+        },
+        {
+          "id": "5",
+          "name": "Sophia Williams",
+          "profileImage": "https://images.pexels.com/photos/3792581/pexels-photo-3792581.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Software Engineer",
+          "location": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+          },
+          "briefBio": "Full-stack developer with a passion for creating user-friendly applications.",
+          "contactInfo": {
+            "email": "sophia.williams@example.com",
+            "phone": "+1 555-123-4567"
+          },
+          "additionalInfo": {
+            "skills": ["Python", "Django", "Angular"],
+            "projects": ["E-commerce Website", "Mobile App"],
+            "interests": ["Technology", "Gaming"]
+          }
+        },
+        {
+          "id": "6",
+          "name": "William Davis",
+          "profileImage": "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Student",
+          "location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+          },
+          "briefBio": "Engineering student with a keen interest in robotics.",
+          "contactInfo": {
+            "email": "william.davis@example.com",
+            "phone": "+1 123-789-4560"
+          },
+          "additionalInfo": {
+            "major": "Mechanical Engineering",
+            "projects": ["Autonomous Vehicle", "Drone Technology"],
+            "clubs": ["Robotics Club", "Astronomy Club"]
+          }
+        },
+        {
+          "id": "7",
+          "name": "Olivia Jones",
+          "profileImage": "https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Teacher",
+          "location": {
+            "latitude": 48.8566,
+            "longitude": 2.3522
+          },
+          "briefBio": "Passionate educator with expertise in literature and history.",
+          "contactInfo": {
+            "email": "olivia.jones@example.com",
+            "phone": "+33 1 23 45 67 89"
+          },
+          "additionalInfo": {
+            "subjects": ["Literature", "History"],
+            "yearsOfExperience": 8,
+            "publications": ["Educational Journals", "Books"]
+          }
+        },
+        {
+          "id": "8",
+          "name": "Daniel Wilson",
+          "profileImage": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Doctor",
+          "location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+          },
+          "briefBio": "Skilled surgeon with a focus on orthopedics.",
+          "contactInfo": {
+            "email": "daniel.wilson@example.com",
+            "phone": "+44 20 7123 8901"
+          },
+          "additionalInfo": {
+            "specialization": "Orthopedics",
+            "hospital": "London Orthopedic Hospital",
+            "certifications": ["MD", "Fellowship in Orthopedics"]
+          }
+        },
+        {
+          "id": "9",
+          "name": "Isabella Taylor",
+          "profileImage": "https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Software Engineer",
+          "location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+          },
+          "briefBio": "Front-end developer passionate about creating responsive and interactive web applications.",
+          "contactInfo": {
+            "email": "isabella.taylor@example.com",
+            "phone": "+1 987-654-3219"
+          },
+          "additionalInfo": {
+            "skills": ["HTML", "CSS", "JavaScript"],
+            "frameworks": ["React", "Vue.js"],
+            "hobbies": ["Photography", "Music"]
+          }
+        },
+        {
+          "id": "10",
+          "name": "Ethan White",
+          "profileImage": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "role": "Doctor",
+          "location": {
+            "latitude": 35.6895,
+            "longitude": 139.6917
+          },
+          "briefBio": "Experienced cardiologist dedicated to patient care and research.",
+          "contactInfo": {
+            "email": "ethan.white@example.com",
+            "phone": "+81 3-1234-6789"
+          },
+          "additionalInfo": {
+            "specialization": "Cardiology",
+            "hospital": "Tokyo Heart Center",
+            "researchInterests": ["Heart Diseases", "Medical Innovations"]
+          }
+        }
+      ]
+      
+}
