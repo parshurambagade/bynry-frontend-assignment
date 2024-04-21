@@ -1,9 +1,42 @@
+import { useState } from "react";
 import { FaLocationArrow } from "react-icons/fa";
-
+import { GrClose } from "react-icons/gr";
+import Modal from "react-modal";
+import MapComponent from "./MapComponent";
 export default function ProfileCard({profile}) {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     const {name, role, profileImage, briefBio, location} = profile;
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      width: "max-content",
+      height: "max-content",
+      display: "flex",
+      flexDirection: "column",
+      gap: "1rem",
+      margin: "1rem"
+    },
+  };
+
+ 
+    
 return (
-    <div className="flex items-center justify-center shadow-sm md:shadow-lg w-max mx-auto">
+    <div className="flex items-center justify-center shadow-sm md:shadow-md xl:shadow-lg w-max mx-auto" >
         <div className="rounded-lg shadow-lg w-3/4 md:w-72 lg:w-64">
             <div className="h-24 bg-slate-500 rounded-t-lg" />
             <img
@@ -27,12 +60,28 @@ return (
                 </p>
             </div>
             <div className="px-6 py-4 md:py-6">
-                <button className="w-full bg-blue-600 text-white rounded-lg px-4 py-2 flex items-center justify-center gap-4">
+                <button className="w-full bg-blue-600 text-white rounded-lg px-4 py-2 flex items-center justify-center gap-4" onClick={openModal}>
                     <span>Summary</span>
                     <FaLocationArrow />
                 </button>
             </div>
         </div>
+
+        {/* MAP MODAL  */}
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Profile Location"
+        style={customStyles}
+      >
+        <div className="flex justify-between items-center">
+        <h2>{name}&apos;s Location</h2>
+        <button onClick={closeModal}><GrClose /></button>
+        </div>
+        <div>
+            <MapComponent location={profile?.location}/>
+        </div>
+      </Modal>
     </div>
-)
+) 
 }
