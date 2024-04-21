@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { FaLocationArrow } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import Modal from "react-modal";
 import MapComponent from "./MapComponent";
+import { Link } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa";
 export default function ProfileCard({profile}) {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -36,7 +38,7 @@ export default function ProfileCard({profile}) {
  
     
 return (
-    <div className="flex items-center justify-center shadow-sm md:shadow-md xl:shadow-lg w-max mx-auto" >
+    <div  className="flex items-center justify-center shadow-sm md:shadow-md xl:shadow-lg w-max mx-auto" >
         <div className="rounded-lg shadow-lg w-3/4 md:w-72 lg:w-64">
             <div className="h-24 bg-slate-500 rounded-t-lg" />
             <img
@@ -59,11 +61,16 @@ return (
                     {briefBio.length > 45 ? `${briefBio.slice(0, 45)}...` : briefBio}
                 </p>
             </div>
-            <div className="px-6 py-4 md:py-6">
-                <button className="w-full bg-blue-600 text-white rounded-lg px-4 py-2 flex items-center justify-center gap-4" onClick={openModal}>
+            <div className="flex justify-between px-4 py-4 md:py-6 text-sm">
+            <Link to={'/profile/' + profile.id} className=" border border-black text-black rounded-lg px-3 py-2 flex items-center justify-center gap-2" onClick={openModal}>
+                    <span>Profile</span>
+                    <FaRegUser />
+                </Link>
+                <button className=" bg-slate-700 text-white rounded-lg px-3 py-2 flex items-center justify-center gap-2" onClick={openModal}>
                     <span>Summary</span>
-                    <FaLocationArrow />
+                    <IoLocationSharp />
                 </button>
+                
             </div>
         </div>
 

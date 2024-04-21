@@ -17,7 +17,7 @@
           "additionalInfo": {
             "skills": ["JavaScript", "React", "Node.js"],
             "languages": ["English", "Spanish"],
-            "hobbies": ["Reading", "Traveling"]
+            "interests": ["Reading", "Traveling"]
           }
         },
         {
@@ -35,9 +35,9 @@
             "phone": "+1 987-654-3210"
           },
           "additionalInfo": {
-            "major": "Computer Science",
-            "graduationYear": 2025,
-            "clubs": ["Programming Club", "Chess Club"]
+            "skills": ["Web Development", "React", "Devops"],
+            "languages": ["English", "French"],
+            "interests": ["Dancing", "Reading", "Traveling"]
           }
         },
         {
@@ -56,7 +56,7 @@
           },
           "additionalInfo": {
             "subjects": ["Mathematics", "Computer Science"],
-            "yearsOfExperience": 10,
+            "interests": ["Travelling", "Music", "Reading", "Teaching"],
             "certifications": ["M.Ed", "Cisco Certified"]
           }
         },
@@ -75,9 +75,9 @@
             "phone": "+81 3-1234-5678"
           },
           "additionalInfo": {
-            "specialization": "Internal Medicine",
-            "hospital": "Tokyo Medical Center",
-            "languagesSpoken": ["English", "Japanese"]
+            "skills": ["Medicine", "Patient Care", "Research"],
+            "languages": ["English", "Japanese"],
+            "interests": ["Research", "Reading", "Swimming"]
           }
         },
         {
@@ -115,9 +115,9 @@
             "phone": "+1 123-789-4560"
           },
           "additionalInfo": {
-            "major": "Mechanical Engineering",
-            "projects": ["Autonomous Vehicle", "Drone Technology"],
-            "clubs": ["Robotics Club", "Astronomy Club"]
+            "skills": ["Java", "React", "JavaScript"],
+            "languages": ["English", "French"],
+            "interests": ["AI ", "Reading", "Gym"]
           }
         },
         {
@@ -136,7 +136,7 @@
           },
           "additionalInfo": {
             "subjects": ["Literature", "History"],
-            "yearsOfExperience": 8,
+            "interests": [ "Reading", "Teaching", "Travelling", "Fashion"],
             "publications": ["Educational Journals", "Books"]
           }
         },
@@ -155,8 +155,8 @@
             "phone": "+44 20 7123 8901"
           },
           "additionalInfo": {
-            "specialization": "Orthopedics",
-            "hospital": "London Orthopedic Hospital",
+            "languages": ["English", "Japanese"],
+            "interests": ["Research", "Reading", "Swimming"],
             "certifications": ["MD", "Fellowship in Orthopedics"]
           }
         },
@@ -195,9 +195,9 @@
             "phone": "+81 3-1234-6789"
           },
           "additionalInfo": {
-            "specialization": "Cardiology",
-            "hospital": "Tokyo Heart Center",
-            "researchInterests": ["Heart Diseases", "Medical Innovations"]
+            "skills": ["Medicine", "Patient Care", "Research"],
+            "languages": ["English", "Japanese"],
+            "interests": ["Research", "Reading", "Swimming"]
           }
         }
       ]
