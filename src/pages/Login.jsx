@@ -1,11 +1,13 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { signIn } from "../api/auth";
+import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();
 
 const Login = () => {
     const [credentials, setCredentials] = useState({ email: "", pass: ""});
-    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setCredentials({
@@ -15,26 +17,18 @@ const Login = () => {
         console.log(credentials)
     }
 
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      try{
+        await signIn(email, password);
+        navigate('/admin')
+      }catch(err){
+        console.error(err)
+      }
+    }
     const {email, password} = credentials;
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-
-        signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    localStorage.setItem("user", user);
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    setError(error);
-    console.log("Error code: " + errorCode + " Message: " + errorMessage);
-  });
-
-    }
+    
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-gray-100 px-4 py-12 ">
       <div className="w-full max-w-md space-y-8">

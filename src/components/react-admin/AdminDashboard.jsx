@@ -1,10 +1,5 @@
 // Admin.js
 import React from 'react';
-import { Resource, EditGuesser, Admin } from 'react-admin';
-import dataProvider from './dataProvider.js';
-import UserList from './UserList';
-import UserEdit from './UserEdit';
-import UserCreate from './UserCreate';
 import UserTable from './UserTable.jsx';
 
 const AdminDashboard = () => (
