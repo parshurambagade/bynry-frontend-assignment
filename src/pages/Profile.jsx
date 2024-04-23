@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import profilesData from "../assets/data.json";
 import { MdOutlineMail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
+import { getSingleUser } from "../api/firestore-apis";
 
 const Profile = () => {
   const { id } = useParams();
-  const profile = profilesData.data[id - 1];
+  const [profile, setProfile] = useState({});
+
+  useEffect(() => {
+    getSingleUser(id).then(data => setProfile(data));
+  },[]);
+
+  console.log(profile)
+
+  if(!Object.keys(profile).length) return; 
+
   const { name, profileImage, role, briefBio, additionalInfo } = profile;
+  
 
   return (
-    <div className="flex flex-col mx-auto w-full max-w-4xl rounded-lg border border-gray-200 bg-gray-100 shadow-md  md:flex-row md:items-start md:gap-8 lg:p-6 mt-8 lg:min-h-[35rem]">
+    <div className="flex flex-col mx-auto w-full max-w-4xl rounded-lg border border-gray-200 bg-gray-100 shadow-md  md:flex-row md:items-start md:gap-8 lg:p-6 mt-8 lg:min-h-[35rem] 2xl:min-h-[85vh]">
       <div className="flex-shrink-0 p-6 md:p-0">
         <div className="h-32 w-32">
           <img alt={name} src={profileImage} />

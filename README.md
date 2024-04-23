@@ -14,4 +14,5 @@
 5. Responsiveness
 6. Search functionality
 7. Firebase database
+8. Loading indicatiors
 

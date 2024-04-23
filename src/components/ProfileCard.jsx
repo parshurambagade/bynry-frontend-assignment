@@ -5,12 +5,13 @@ import Modal from "react-modal";
 import MapComponent from "./MapComponent";
 import { Link } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
-export default function ProfileCard({ profile }) {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
+export default function ProfileCard({ profile, id }) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+console.log(profile)
   const { name, role, profileImage, briefBio, location } = profile;
 
-  const openModal = () => {
+  const openModal = () => { 
     setModalIsOpen(true);
   };
 
@@ -61,7 +62,7 @@ export default function ProfileCard({ profile }) {
         </div>
         <div className="flex justify-between px-4 py-4 md:py-6 text-sm">
           <Link
-            to={"/profile/" + profile.id}
+            to={"/profile/" + id}
             className=" border border-slate-800 text-slate-800 rounded-lg px-3 py-2 flex items-center justify-center gap-2 bg-slate-300"
             onClick={openModal}
           >

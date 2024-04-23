@@ -1,5 +1,6 @@
 import React from "react";
 import { LiaSearchSolid } from "react-icons/lia";
+import { logout } from "../../api/auth";
 // import { Link } from 'react-router-dom';
 
 //TODO: replace a tag with Link tag
@@ -19,9 +20,18 @@ const Header = () => {
           className="bg-gray-200 w-full  outline-none"
         />
       </div>
-      <button className=" border border-gray-300 transition-all px-4 py-2 rounded-md hover:bg-slate-700  text-sm">
-        Admin Login
+      {
+        localStorage.getItem("user") 
+        ? 
+        <button className=" border border-gray-300 transition-all px-4 py-2 rounded-md hover:bg-slate-700  text-sm" onClick={logout}>
+        Logout
       </button>
+        :
+        <a href="/login" className=" border border-gray-300 transition-all px-4 py-2 rounded-md hover:bg-slate-700  text-sm">
+        Admin Login
+      </a>
+      }
+      
     </div>
   );
 };
