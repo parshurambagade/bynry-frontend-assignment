@@ -11,7 +11,7 @@ const ProtectedRoute = ({ component: Component }) => {
   return (
     <> 
       <Component />
-      <Outlet /> {/* Render child routes */}
+      {/* <Outlet /> Render child routes */}
     </>
   );
 };

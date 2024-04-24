@@ -1,11 +1,12 @@
 import React from "react";
 import { LiaSearchSolid } from "react-icons/lia";
 import { logout } from "../../api/auth";
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 //TODO: replace a tag with Link tag
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-slate-800 text-gray-300 flex justify-between items-center mb-4 px-20 black py-4 shadow-md">
       <a href="/" className="font-bold text-2xl">
@@ -21,10 +22,10 @@ const Header = () => {
         />
       </div>
       {
-        localStorage.getItem("user") 
+        localStorage.getItem("authUser") 
         ? 
-        <button className=" border border-gray-300 transition-all px-4 py-2 rounded-md hover:bg-slate-700  text-sm" onClick={logout}>
-        Logout
+        <button className=" border border-gray-300 transition-all px-4 py-2 rounded-md hover:bg-slate-700  text-sm" onClick={() => navigate('/admin')}>
+        Dashboard
       </button>
         :
         <a href="/login" className=" border border-gray-300 transition-all px-4 py-2 rounded-md hover:bg-slate-700  text-sm">

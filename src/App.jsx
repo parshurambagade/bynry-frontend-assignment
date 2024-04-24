@@ -1,9 +1,7 @@
 
-import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromChildren, createRoutesFromElements } from "react-router-dom";
-import Header from "./components/ui/Header"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home"
 import Profile from "./pages/Profile";
-import Footer from "./components/ui/Footer";
 import AdminPage from "./pages/AdminPage";
 import { getAllUsers } from "./api/firestore-apis";
 import { useEffect } from "react";
@@ -12,6 +10,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AddUser from "./components/react-admin/AddUser";
 import EditUser from "./components/react-admin/EditUser";
 import AdminDashboard from "./components/react-admin/AdminDashboard";
+import Layout from "./components/ui/Layout";
+import { insertMultipleUsers } from "./api/insertMultipleData";
+import { Provider, useDispatch } from "react-redux";
+import { store } from "./redux/store";
+import { addMultipleUsers } from "./redux/usersSlice";
 
 
 
@@ -19,39 +22,40 @@ import AdminDashboard from "./components/react-admin/AdminDashboard";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/profile/:id",
-    element: <Profile />,
-  },
-  {
-    path: "/admin",
-    element: <ProtectedRoute component={AdminPage} />,
+    element: <Layout />,
     children: [
-      { index: true, element: <AdminDashboard /> },
-      { path: "dashboard", element: <AdminDashboard /> },
-      { path: "add-user", element: <AddUser /> },
-      { path: "edit-user/:id", element: <EditUser /> }
+      {index: true, element: <Home />},
+      {
+        path: "/profile/:id",
+        element: <Profile />,
+      },
+      {
+        path: "/admin",
+        element: <ProtectedRoute component={AdminPage} />,
+        children: [
+          { index: true, element: <AdminDashboard /> },
+          { path: "add-user", element: <AddUser /> },
+          { path: "edit-user/:id", element: <EditUser /> }
+        ]
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      }
     ]
   },
-  {
-    path: "/login",
-    element: <Login />,
-  }
+  
 ]);
+
 
 function App() {
 
-  useEffect(() => {
-    getAllUsers();
-},[])
 
   return (
     <>
-      <Header />
+     <Provider store={store}>
       <RouterProvider router={router} />
-      <Footer />
+      </Provider>
     </>
   )
 }

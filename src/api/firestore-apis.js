@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, getDocs } from "firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
@@ -15,8 +15,7 @@ export const getAllUsers = async () => {
         usersData[doc.id] = doc.data();
     });
     
-
-    localStorage.setItem('users', JSON.stringify(usersData));
+    // JSON.stringify(usersData)
 
     return usersData;
 }
@@ -34,4 +33,12 @@ export const getSingleUser = async (id) => {
         console.log("No such user!");
     }
 
+}
+
+export const deleteSingleUser = async (id) => {
+    await deleteDoc(doc(db, "users", id))
+    .then(() => console.log(id + " Deleted successfully!"))
+    .catch(e => console.log(e));
+
+    getAllUsers();
 }

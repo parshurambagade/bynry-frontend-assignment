@@ -1,30 +1,12 @@
 import { collection, doc, setDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig'; // Import your Firebase configuration
 
-const insertMultipleUsers = async (usersData) => {
-  try {
-    const usersCollection = collection(db, 'users');
 
-    // Loop through each user data and set it in Firestore
-    for (const userId in usersData) {
-      if (Object.hasOwnProperty.call(usersData, userId)) {
-        const userData = usersData[userId];
-        
-        // Set user data to Firestore with the specified userId
-        await setDoc(doc(usersCollection, userId), userData);
-      }
-    }
-
-    console.log('Multiple users data inserted into Firestore successfully');
-  } catch (error) {
-    console.error('Error inserting multiple users data:', error);
-  }
-};
 
 // Example users data
 const usersData = {
     
-    "1": {
+    "4A4yR88IgzxsLTOAv1QA": {
         "name": "John Doe",
         "profileImage": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Software Engineer",
@@ -44,7 +26,7 @@ const usersData = {
         }
     },
     
-    "2":{
+    "TLva68nATGcmvwC3Ym6u":{
         "name": "Jane Smith",
         "profileImage": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Student",
@@ -63,7 +45,7 @@ const usersData = {
           "interests": ["Dancing", "Reading", "Traveling"]
         }
       },
-      "3":{
+      "7xbPN1OyH6nodB1i0on0":{
         "name": "Emily Brown",
         "profileImage": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Teacher",
@@ -77,12 +59,12 @@ const usersData = {
           "phone": "+44 20 7123 4567"
         },
         "additionalInfo": {
-          "subjects": ["Mathematics", "Computer Science"],
+          "skills": ["Mathematics", "Computer Science"],
           "interests": ["Travelling", "Music", "Reading", "Teaching"],
-          "certifications": ["M.Ed", "Cisco Certified"]
+          "languages": ["English", "Chinese", "Spanish", "French"]
         }
       },
-      "4":{
+      "XC3RcKsVt7Ur3THRxAaK":{
         "name": "Michael Johnson",
         "profileImage": "https://images.pexels.com/photos/1374510/pexels-photo-1374510.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Doctor",
@@ -101,7 +83,7 @@ const usersData = {
           "interests": ["Research", "Reading", "Swimming"]
         }
       },
-      "5":{
+      "qUVU9KSgaviFbkiJTZMT":{
         "name": "Sophia Williams",
         "profileImage": "https://images.pexels.com/photos/3792581/pexels-photo-3792581.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Software Engineer",
@@ -116,11 +98,11 @@ const usersData = {
         },
         "additionalInfo": {
           "skills": ["Python", "Django", "Angular"],
-          "projects": ["E-commerce Website", "Mobile App"],
+          "languages": ["english", "Latin"],
           "interests": ["Technology", "Gaming"]
         }
       },
-      "6":{
+      "RP7RqW3ccaf5WUcItAUQ":{
         "name": "William Davis",
         "profileImage": "https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Student",
@@ -139,7 +121,7 @@ const usersData = {
           "interests": ["AI ", "Reading", "Gym"]
         }
       },
-      "7":{
+      "PfSzPSzyB4pVvgpgOUty":{
         "name": "Olivia Jones",
         "profileImage": "https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg?auto=compress&cs=tinysrgb&w=600",
         "role": "Teacher",
@@ -153,12 +135,12 @@ const usersData = {
           "phone": "+33 1 23 45 67 89"
         },
         "additionalInfo": {
-          "subjects": ["Literature", "History"],
+          "skills": ["Literature", "History"],
           "interests": [ "Reading", "Teaching", "Travelling", "Fashion"],
-          "publications": ["Educational Journals", "Books"]
+          "languages": ["English", "French", "Spanish", "Italian"]
         }
       },
-      "8":{
+      "KRaJNcZhx8lRlPsc3m89":{
         "name": "Daniel Wilson",
         "profileImage": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Doctor",
@@ -174,10 +156,10 @@ const usersData = {
         "additionalInfo": {
           "languages": ["English", "Japanese"],
           "interests": ["Research", "Reading", "Swimming"],
-          "certifications": ["MD", "Fellowship in Orthopedics"]
+          "skills": ["dance", "Fellowship in Orthopedics"]
         }
       },
-      "9":{
+      "7s77xI4G3Vjx0WdOpeu3":{
         "name": "Isabella Taylor",
         "profileImage": "https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Software Engineer",
@@ -192,11 +174,11 @@ const usersData = {
         },
         "additionalInfo": {
           "skills": ["HTML", "CSS", "JavaScript"],
-          "frameworks": ["React", "Vue.js"],
-          "hobbies": ["Photography", "Music"]
+          "languages": ["English", "Spanish"],
+          "interests": ["Photography", "Music"]
         }
       },
-      "10":{
+      "CPOFr0yFK1YfAoAGxBeK":{
         "name": "Ethan White",
         "profileImage": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",
         "role": "Doctor",
@@ -217,5 +199,24 @@ const usersData = {
     }
 };
 
-// Call the function to insert multiple users data into Firestore
 
+
+export const insertMultipleUsers = async () => {
+  try {
+    const usersCollection = collection(db, 'users');
+
+    // Loop through each user data and set it in Firestore
+    for (const userId in usersData) {
+      if (Object.hasOwnProperty.call(usersData, userId)) {
+        const userData = usersData[userId];
+        
+        // Set user data to Firestore with the specified userId
+        await setDoc(doc(usersCollection, userId), userData);
+      }
+    }
+
+    console.log('Multiple users data inserted into Firestore successfully');
+  } catch (error) {
+    console.error('Error inserting multiple users data:', error);
+  }
+};
